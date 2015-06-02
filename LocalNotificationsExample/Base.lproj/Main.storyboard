@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEb-wO-iw4">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="p5i-Sc-Fej">
+            <objects>
+                <navigationController id="qEb-wO-iw4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGn-8n-Cbn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HNq-qF-fWG" kind="relationship" relationship="rootViewController" id="l7d-b1-Mrg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOr-6t-bHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="434"/>
+        </scene>
+        <!--Create Schedule View Controller-->
+        <scene sceneID="LTs-Dj-LVs">
+            <objects>
+                <viewController id="tBY-XF-XMb" customClass="LNCreateScheduleViewController" customModule="LocalNotificationsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FOa-5v-hqH"/>
+                        <viewControllerLayoutGuide type="bottom" id="zhd-cb-mNw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4zK-hL-XaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5w-ft-X0J">
+                                <rect key="frame" x="20" y="150" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2ag-Q1-PSF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85x-6U-nJa">
+                                <rect key="frame" x="110" y="146" width="454" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tBY-XF-XMb" id="srd-hn-anX"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-dV-MdH">
+                                <rect key="frame" x="110" y="222" width="409" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tBY-XF-XMb" id="g7p-83-ZR2"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-dY-RVU">
+                                <rect key="frame" x="20" y="226" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSP-Hr-JBj">
+                                <rect key="frame" x="30" y="30" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iqv-GE-oqF" kind="unwind" identifier="CLOSE" unwindAction="unwind:" id="1S1-YS-wq8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초 후" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aj-7o-fhx">
+                                <rect key="frame" x="529" y="226" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNa-dU-5NG">
+                                <rect key="frame" x="533" y="30" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iqv-GE-oqF" kind="unwind" identifier="DONE" unwindAction="unwind:" id="2sF-6B-9IX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RDh-dY-RVU" firstAttribute="top" secondItem="85x-6U-nJa" secondAttribute="bottom" constant="50" id="7eM-50-dhW"/>
+                            <constraint firstItem="1aj-7o-fhx" firstAttribute="centerY" secondItem="J2h-dV-MdH" secondAttribute="centerY" id="7og-HI-DJ8"/>
+                            <constraint firstItem="RDh-dY-RVU" firstAttribute="trailing" secondItem="p5w-ft-X0J" secondAttribute="trailing" id="7vi-AN-HdJ"/>
+                            <constraint firstItem="LNa-dU-5NG" firstAttribute="top" secondItem="FOa-5v-hqH" secondAttribute="bottom" constant="10" id="95c-IJ-KU2"/>
+                            <constraint firstItem="RDh-dY-RVU" firstAttribute="trailing" secondItem="p5w-ft-X0J" secondAttribute="trailing" id="B4g-n8-dVC"/>
+                            <constraint firstItem="p5w-ft-X0J" firstAttribute="centerY" secondItem="85x-6U-nJa" secondAttribute="centerY" id="FLm-Oh-IWL"/>
+                            <constraint firstAttribute="trailing" secondItem="LNa-dU-5NG" secondAttribute="trailing" constant="30" id="Fco-h5-bwR"/>
+                            <constraint firstItem="aSP-Hr-JBj" firstAttribute="leading" secondItem="4zK-hL-XaQ" secondAttribute="leading" constant="30" id="Fv4-8h-ap3"/>
+                            <constraint firstItem="RDh-dY-RVU" firstAttribute="leading" secondItem="p5w-ft-X0J" secondAttribute="leading" id="N8l-Do-ZcL"/>
+                            <constraint firstItem="p5w-ft-X0J" firstAttribute="top" secondItem="FOa-5v-hqH" secondAttribute="bottom" constant="130" id="P5x-bY-taw"/>
+                            <constraint firstAttribute="trailing" secondItem="p5w-ft-X0J" secondAttribute="trailing" constant="40" id="SSc-PG-Cg5"/>
+                            <constraint firstItem="1aj-7o-fhx" firstAttribute="centerY" secondItem="J2h-dV-MdH" secondAttribute="centerY" id="VID-iA-FR1"/>
+                            <constraint firstItem="RDh-dY-RVU" firstAttribute="centerY" secondItem="J2h-dV-MdH" secondAttribute="centerY" id="WVR-gW-67X"/>
+                            <constraint firstItem="aSP-Hr-JBj" firstAttribute="top" secondItem="FOa-5v-hqH" secondAttribute="bottom" constant="10" id="WvP-mz-Mqt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1aj-7o-fhx" secondAttribute="trailing" constant="20" id="XMa-Oo-XC0"/>
+                            <constraint firstItem="p5w-ft-X0J" firstAttribute="leading" secondItem="4zK-hL-XaQ" secondAttribute="leading" constant="20" id="Y74-hs-5iC"/>
+                            <constraint firstItem="85x-6U-nJa" firstAttribute="leading" secondItem="p5w-ft-X0J" secondAttribute="trailing" constant="10" id="ZpR-r3-FcF"/>
+                            <constraint firstItem="1aj-7o-fhx" firstAttribute="leading" secondItem="J2h-dV-MdH" secondAttribute="trailing" constant="10" id="cMs-WS-dhB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="85x-6U-nJa" secondAttribute="trailing" constant="20" id="dbm-he-Ly7"/>
+                            <constraint firstItem="1aj-7o-fhx" firstAttribute="bottom" secondItem="J2h-dV-MdH" secondAttribute="bottom" constant="-5" id="ded-1L-DQ4"/>
+                            <constraint firstItem="p5w-ft-X0J" firstAttribute="leading" secondItem="85x-6U-nJa" secondAttribute="leading" constant="1" id="i3O-4a-UD9"/>
+                            <constraint firstItem="J2h-dV-MdH" firstAttribute="leading" secondItem="RDh-dY-RVU" secondAttribute="trailing" constant="10" id="lfw-if-wDw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LNa-dU-5NG" secondAttribute="trailing" constant="30" id="pEV-qq-YFx"/>
+                            <constraint firstItem="85x-6U-nJa" firstAttribute="top" secondItem="p5w-ft-X0J" secondAttribute="bottom" constant="20" id="rxw-q8-J8c"/>
+                            <constraint firstItem="p5w-ft-X0J" firstAttribute="trailing" secondItem="85x-6U-nJa" secondAttribute="trailing" id="vqB-3f-wme"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SSc-PG-Cg5"/>
+                                <exclude reference="i3O-4a-UD9"/>
+                                <exclude reference="vqB-3f-wme"/>
+                                <exclude reference="rxw-q8-J8c"/>
+                                <exclude reference="7vi-AN-HdJ"/>
+                                <exclude reference="pEV-qq-YFx"/>
+                                <exclude reference="VID-iA-FR1"/>
+                                <exclude reference="ded-1L-DQ4"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="secondsTextField" destination="J2h-dV-MdH" id="gZD-6G-8tX"/>
+                        <outlet property="titleTextField" destination="85x-6U-nJa" id="Hf4-9M-iII"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7R-vG-Q9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2118" y="434"/>
+        </scene>
+        <!--Remote Push View Controller-->
+        <scene sceneID="qFW-xh-fSV">
+            <objects>
+                <viewController id="ckN-OX-8Mp" customClass="LNRemotePushViewController" customModule="LocalNotificationsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z6a-Qo-fkf"/>
+                        <viewControllerLayoutGuide type="bottom" id="BD2-fE-3Ml"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ow-FF-rNy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhI-Wt-HNQ">
+                                <rect key="frame" x="10" y="240.5" width="580" height="119.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="LhI-Wt-HNQ" secondAttribute="centerY" id="4hP-Lf-8l5"/>
+                            <constraint firstAttribute="trailing" secondItem="LhI-Wt-HNQ" secondAttribute="trailing" constant="10" id="eh1-sF-b5G"/>
+                            <constraint firstItem="LhI-Wt-HNQ" firstAttribute="leading" secondItem="3ow-FF-rNy" secondAttribute="leading" constant="10" id="yPR-rV-YRY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="LhI-Wt-HNQ" id="C39-En-iCM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ue-Bw-uj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="1177"/>
+        </scene>
+        <!--Create Location View Controller-->
+        <scene sceneID="MSV-Th-YMO">
+            <objects>
+                <viewController id="gXP-IB-7Hf" customClass="LNCreateLocationViewController" customModule="LocalNotificationsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K7X-H7-Ic0"/>
+                        <viewControllerLayoutGuide type="bottom" id="T2b-ev-c9h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fiq-eX-5XP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6DE-ig-HWE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xOc-Rr-1Oi" appends="YES" id="VyF-N7-lnw"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T2b-ev-c9h" firstAttribute="top" secondItem="6DE-ig-HWE" secondAttribute="bottom" id="4zs-TF-fb9"/>
+                            <constraint firstAttribute="trailing" secondItem="6DE-ig-HWE" secondAttribute="trailing" id="Ghg-9G-HoJ"/>
+                            <constraint firstItem="6DE-ig-HWE" firstAttribute="top" secondItem="fiq-eX-5XP" secondAttribute="top" id="man-3h-JOC"/>
+                            <constraint firstItem="6DE-ig-HWE" firstAttribute="leading" secondItem="fiq-eX-5XP" secondAttribute="leading" id="sN5-cY-JEb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VZf-LA-hmO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k6z-9C-1Tz">
+                            <connections>
+                                <action selector="doAddLocationNotification:" destination="gXP-IB-7Hf" id="rjn-Ob-Bus"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="longPressGestureRecognizer" destination="xOc-Rr-1Oi" id="pFv-JQ-QgU"/>
+                        <outlet property="mapView" destination="6DE-ig-HWE" id="9Wb-0r-CpU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFQ-M3-eTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="xOc-Rr-1Oi"/>
+            </objects>
+            <point key="canvasLocation" x="1426" y="1177"/>
+        </scene>
+        <!--Notifications Examples-->
+        <scene sceneID="lBo-St-U3z">
+            <objects>
+                <tableViewController id="HNq-qF-fWG" customClass="LNMainFunctionListTableViewController" customModule="LocalNotificationsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9we-GR-jM1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="93b-kn-zaJ">
+                            <rect key="frame" x="0.0" y="64" width="600" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="" id="kiu-lw-TOn">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LOCAL_NOTIFICATIONS_CELL" textLabel="9bq-ly-Sgk" style="IBUITableViewCellStyleDefault" id="hLF-57-6w3">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLF-57-6w3" id="hwz-4E-DIV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Local Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9bq-ly-Sgk">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NJ5-Ob-eXB" kind="show" id="nOK-2J-q4a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LOCATION_BASED_NOTIFICATIONS_CELL" textLabel="jLM-8z-wnG" style="IBUITableViewCellStyleDefault" id="bHf-35-E4h">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bHf-35-E4h" id="bQh-g1-2Uk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Location-based Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLM-8z-wnG">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gXP-IB-7Hf" kind="show" id="T8S-be-17e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="REMOTE_NOTIFICATIONS_CELL" textLabel="55J-da-m6v" style="IBUITableViewCellStyleDefault" id="KUq-Gp-vRc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KUq-Gp-vRc" id="w8m-VF-Lwi">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Remote Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55J-da-m6v">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ckN-OX-8Mp" kind="show" id="YLP-To-jRg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="HNq-qF-fWG" id="8Oq-3k-MoH"/>
+                            <outlet property="delegate" destination="HNq-qF-fWG" id="lgM-ds-82T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notifications Examples" id="MI3-vW-oL6"/>
+                    <connections>
+                        <outlet property="tableHeaderView" destination="93b-kn-zaJ" id="rmg-iA-sH8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlS-S3-3g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="434"/>
+        </scene>
+        <!--Local Notifications Example-->
+        <scene sceneID="Ay7-4m-Rec">
+            <objects>
+                <tableViewController id="NJ5-Ob-eXB" customClass="LNScheduleListsTableViewController" customModule="LocalNotificationsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3kS-fh-ICu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LOCAL_NOTIFICATIONS_LIST_CELL" textLabel="g0e-0z-GuB" detailTextLabel="ICX-cg-PUZ" style="IBUITableViewCellStyleSubtitle" id="pbp-rs-Lb4">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pbp-rs-Lb4" id="ezP-Sf-SZp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g0e-0z-GuB">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ICX-cg-PUZ">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NJ5-Ob-eXB" id="Xt1-PJ-Pxy"/>
+                            <outlet property="delegate" destination="NJ5-Ob-eXB" id="UF7-Le-9Hn"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="JgD-6I-OMT"/>
+                        <barButtonItem systemItem="trash" id="0Yr-t3-vir">
+                            <connections>
+                                <action selector="doRemoveAllNotifications:" destination="NJ5-Ob-eXB" id="aff-Se-eOr"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Local Notifications Example" id="8ur-HK-T5F">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iq7-R0-M64">
+                            <connections>
+                                <segue destination="tBY-XF-XMb" kind="presentation" id="hgJ-pV-ojq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="notificationsTableView" destination="3kS-fh-ICu" id="1Z7-f3-5Xb"/>
+                        <outlet property="removeAllBarButtonItem" destination="0Yr-t3-vir" id="ZZG-Zg-xd0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYW-R4-QOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iqv-GE-oqF" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1426" y="434"/>
+        </scene>
+    </scenes>
+</document>
