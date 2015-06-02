@@ -43,6 +43,7 @@ class LNCreateScheduleViewController: UIViewController, UITextFieldDelegate {
         newNotification.soundName = UILocalNotificationDefaultSoundName
         newNotification.timeZone = NSTimeZone.defaultTimeZone()
         newNotification.applicationIconBadgeNumber = 1
+        newNotification.category = "CATEGORY1"
         
         if NSProcessInfo().isOperatingSystemAtLeastVersion(NSOperatingSystemVersion(majorVersion: 8, minorVersion: 2, patchVersion: 0)) {
           newNotification.alertTitle = "Local Notification Ex."
